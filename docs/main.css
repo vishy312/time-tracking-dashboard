@@ -9,5 +9,125 @@ main {
   width: 375px;
   border: 1px solid black;
   margin-inline: auto;
+  padding: 4em 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+main .profile-card {
+  width: 100%;
+  max-width: 350px;
+  margin-inline: auto;
+}
+
+main .profile-card .profile {
+  background-color: #5847eb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1em;
+  padding: 1.5em;
+  border-radius: 0.8em;
+  position: relative;
+  top: 1.5em;
+}
+
+main .profile-card .profile img {
+  width: 3em;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+main .profile-card .profile .profile-info {
+  line-height: 0.2;
+}
+
+main .profile-card .profile .profile-info p {
+  color: #bdc1ff;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+main .profile-card .profile .profile-info h1 {
+  color: white;
+  font-weight: 300;
+}
+
+main .profile-card .tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #1c1f4a;
+  padding-block: 2em 1.3em;
+  border-radius: 0.8em;
+}
+
+main .profile-card .tabs button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: #6f76c8;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+main .profile-card .tabs button:hover {
+  color: white;
+}
+
+main .cd {
+  width: 100%;
+  max-width: 350px;
+  margin-inline: auto;
+  margin-top: 1em;
+}
+
+main .cd .icon-card {
+  background-color: #ff8c66;
+  background-image: url(images/icon-work.svg);
+  background-repeat: no-repeat;
+  background-position: top right 15px;
+  padding: 2.5em;
+  border-radius: 0.8rem;
+}
+
+main .cd .data-card {
+  background-color: #1c1f4a;
+  border-radius: 0.8rem;
+  color: white;
+  padding: 1rem 1.5em 0rem 1.5em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  top: -50px;
+  -ms-grid-row-align: start;
+}
+
+main .cd .data-card img {
+  position: relative;
+  left: 85px;
+}
+
+main .cd .data-card h2 {
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+main .cd .data-card small {
+  color: #bdc1ff;
+  font-size: 0.85rem;
 }
 /*# sourceMappingURL=main.css.map */

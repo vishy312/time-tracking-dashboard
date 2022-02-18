@@ -13,4 +13,94 @@ main {
   width: 375px;
   border: 1px solid black;
   margin-inline: auto;
+  padding: 4em 1em;
+  box-sizing: border-box;
+  .profile-card {
+    width: 100%;
+    max-width: 350px;
+    margin-inline: auto;
+    .profile {
+      background-color: $profileBg;
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      padding: 1.5em;
+      border-radius: 0.8em;
+      position: relative;
+      top: 1.5em;
+      img {
+        width: 3em;
+        height: fit-content;
+      }
+      .profile-info {
+        line-height: 0.2;
+        p {
+          color: $previousDataText;
+          font-size: 0.8rem;
+          font-weight: 300;
+        }
+        h1 {
+          color: white;
+          font-weight: 300;
+        }
+      }
+    }
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      background-color: $dataCardBg;
+      padding-block: 2em 1.3em;
+      border-radius: 0.8em;
+      button {
+        background-color: transparent;
+        border: 1px solid transparent;
+        color: $btnTextColor;
+        font-weight: 300;
+        cursor: pointer;
+      }
+      button:hover {
+        color: white;
+      }
+    }
+  }
+  .cd {
+    width: 100%;
+    max-width: 350px;
+    margin-inline: auto;
+    margin-top: 1em;
+    .icon-card {
+      background-color: $workIconBg;
+      background-image: url(images/icon-work.svg);
+      background-repeat: no-repeat;
+      background-position: top right 15px;
+      padding: 2.5em;
+      border-radius: 0.8rem;
+    }
+    .data-card {
+      background-color: $dataCardBg;
+      border-radius: 0.8rem;
+      color: white;
+      padding: 1rem 1.5em 0rem 1.5em;
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      top: -50px;
+      -ms-grid-row-align: start;
+      img {
+        position: relative;
+        left: 85px;
+      }
+      h2 {
+        font-weight: 300;
+        font-size: 2rem;
+      }
+      small {
+          color: $previousDataText;
+          font-size: 0.85rem;
+      }
+    }
+  }
+
 }
