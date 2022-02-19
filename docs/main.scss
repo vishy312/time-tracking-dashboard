@@ -7,11 +7,11 @@
     size: 18px;
     weight: 400;
   }
+  background-color: $bgColor;
 }
 
 main {
   width: 375px;
-  border: 1px solid black;
   margin-inline: auto;
   padding: 4em 1em;
   box-sizing: border-box;
@@ -19,6 +19,7 @@ main {
     width: 100%;
     max-width: 350px;
     margin-inline: auto;
+    margin-bottom: 1.5em;
     .profile {
       background-color: $profileBg;
       display: flex;
@@ -31,17 +32,21 @@ main {
       img {
         width: 3em;
         height: fit-content;
+        background-color: $profileBg;
       }
       .profile-info {
         line-height: 0.2;
+        background-color: $profileBg;
         p {
           color: $previousDataText;
           font-size: 0.8rem;
           font-weight: 300;
+          background-color: $profileBg;
         }
         h1 {
           color: white;
           font-weight: 300;
+          background-color: $profileBg;
         }
       }
     }
@@ -67,7 +72,6 @@ main {
     width: 100%;
     max-width: 350px;
     margin-inline: auto;
-    margin-top: 1em;
     .icon-card {
       background-color: $workIconBg;
       background-image: url(images/icon-work.svg);
@@ -87,7 +91,11 @@ main {
       align-items: center;
       position: relative;
       top: -50px;
-      -ms-grid-row-align: start;
+      line-height: 0.1;
+      margin-bottom: -1.5em;
+      p{
+        background-color: $dataCardBg;
+      }
       img {
         position: relative;
         left: 85px;
@@ -95,12 +103,48 @@ main {
       h2 {
         font-weight: 300;
         font-size: 2rem;
+        background-color: $dataCardBg;
       }
       small {
-          color: $previousDataText;
-          font-size: 0.85rem;
+        color: $previousDataText;
+        font-size: 0.85rem;
       }
     }
   }
-
+  #play-card {
+    .icon-card {
+      background-color: $playIconBg;
+      background-image: url(images/icon-play.svg);
+      background-repeat: no-repeat;
+    }
+  }
+  #study-card {
+    .icon-card {
+      background-color: $studyIconBg;
+      background-image: url(images/icon-study.svg);
+      background-repeat: no-repeat;
+    }
+  }
+  #exercise-card {
+    .icon-card {
+      background-color: $exerciseIconBg;
+      background-image: url(images/icon-exercise.svg);
+      background-repeat: no-repeat;
+    }
+  }
+  #social-card {
+    .icon-card {
+      background-color: $socialIconBg;
+      background-image: url(images/icon-social.svg);
+      background-repeat: no-repeat;
+    }
+  }
+  #self-care-card {
+    .icon-card {
+      background-color: $selfCareIconBg;
+      background-image: url(images/icon-self-care.svg);
+      background-repeat: no-repeat;
+    }
+  }
+  
 }
