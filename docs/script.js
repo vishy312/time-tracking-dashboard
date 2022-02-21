@@ -1,47 +1,103 @@
-let workData, playData, studyData, exerciseData, socialData, selfCareData = [], mainObj = {};
-
-let showObj = function() {
-    for(let prop in mainObj){
-        console.log(mainObj);
-        console.log(mainObj[prop]);
-    }
-}
+let timeframe = 'weekly'; //default value
+const container = document.querySelector('.container');
+let regularCards; //place holder for all cards (work, play, study, etc)
 
 
+// 1. Initialize Menu
+const menu = document.querySelectorAll('.menu-link');
+
+menu.forEach(element => {
+    element.addEventListener('click', menuOnClick);
+});
+
+
+// 2. Get JSON Data & Create Cards
+let data = {};
 
 fetch('./data.json')
-    .then(function (response){
-        return response.json();
-    })
-    .then(function (data){
-        workData = data[0];
-        playData = data[1];
-        studyData = data[2];
-        exerciseData = data[3];
-        socialData = data[4];
-        selfCareData = data[5];
-        mainObj = data;
-        showObj();
+    .then(resp => resp.json())
+    .then(jsonData => {
+
+        //Create Cards
+        jsonData.forEach(element => {
+            container.insertAdjacentHTML('beforeend', 
+                createRegularCard(element, timeframe));
+        });
+
+        //Convert array to dict
+        jsonData.forEach(element => {
+            data[element.title] = element.timeframes;
+        });
+
+        //I want to have reference to created cards
+        regularCards = document.querySelectorAll('.regular-card');
+        //console.log(regularCards);
     });
 
-// declaring the variables //
 
-const daily = document.getElementById('daily');
-const weekly = document.getElementById('weekly');
-const monthly = document.getElementById('monthly');
-const work = document.getElementById('work-card');
-const play = document.getElementById('play-card');
-const study = document.getElementById('study-card');
-const social = document.getElementById('social-card');
-const exercise = document.getElementById('exercise-card');
-const selfCare = document.getElementById('self-care-card');
+// -------- Functions
 
-// writing necessary functions //
+function menuOnClick(event){
+    //console.log('click', event.target.innerText.toLowerCase());
+    menu.forEach(element => {
+        element.classList.remove('menu-active');
+    });
+    event.target.classList.add('menu-active');
+    timeframe = event.target.innerText.toLowerCase();
 
+    updateCards(timeframe);
+}
 
-document.addEventListener('load', function(){
-    let prev = work.lastElementChild.lastElementChild;
-    let obj = mainObj[workData].timeframes.weekly;
-    prev = obj.current;
-    prev.previousElementSibling.innerHTML = `Last week-${obj.previous}`
-})
+function updateCards(timeframe){
+    regularCards.forEach(card => {
+        updateCard(card, timeframe);
+    });
+}
+
+function updateCard(card, timeframe) {
+    const title = card.querySelector('.title').innerText;
+    const current = data[title][timeframe]['current'];
+    const previous = data[title][timeframe]['previous'];
+
+    const timeframeMsg = {
+        'daily': 'Yesterday',
+        'weekly': 'Last Week',
+        'monthly': 'Last Month'
+    };
+
+    const hoursElement = card.querySelector('.hours');
+    hoursElement.innerText = `${current}hrs`;
+    const msgElement = card.querySelector('.description');
+    msgElement.innerText = `${timeframeMsg[timeframe]} - ${previous}hrs`;
+}
+
+function createRegularCard(element, timeframe) {
+    let title = element['title'];
+    let current = element['timeframes'][timeframe]['current'];
+    let previous = element['timeframes'][timeframe]['previous'];
+
+    const timeframeMsg = {
+        'daily': 'Yesterday',
+        'weekly': 'Last Week',
+        'monthly': 'Last Month'
+    };
+
+    return `
+<div class="regular-card ${title.toLowerCase().replace(/\s/g, '-')}">
+    <div class="property-card">
+        <div class="row">
+            <div class="title">${title}</div>
+            <div class="points">
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+            </div>
+        </div>
+        <div class="row-2">
+            <div class="hours">${current}hrs</div>
+            <div class="description">${timeframeMsg[timeframe]} - ${previous}hrs</div>
+        </div>
+    </div>
+</div>`
+
+}

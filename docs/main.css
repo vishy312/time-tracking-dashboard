@@ -9,4 +9,327 @@
 html {
   font-size: 62.5%;
 }
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: #0f1424;
+}
+
+.container {
+  width: 88%;
+  margin: 2rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2.2rem;
+}
+
+.menu-card {
+  background-color: #1c1f4a;
+  border-radius: 1.6rem;
+  width: 100%;
+}
+
+.card-report {
+  background-color: #5847eb;
+  border-radius: 1.6rem;
+  padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 1.8rem;
+}
+
+.card-report img {
+  width: 26%;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
+.card-report .report {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.card-report .report p {
+  font-size: 1.5rem;
+  color: #bdc1ff;
+}
+
+.card-report .report .name {
+  color: white;
+  font-size: 2.4rem;
+  font-weight: 300;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2.5rem;
+}
+
+.menu .menu-link {
+  color: #6f76c8;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.menu .menu-link:hover {
+  color: white;
+}
+
+.menu .menu-active {
+  color: white;
+}
+
+.regular-card {
+  width: 100%;
+  border-radius: 1.6rem;
+  background-repeat: no-repeat;
+  background-position: 92% -1rem;
+}
+
+.regular-card .property-card {
+  position: relative;
+  background-color: #1c1f4a;
+  margin-top: 4rem;
+  border-radius: 1.6rem;
+  padding: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.8rem;
+  border: 2px solid #1c1f4a;
+}
+
+.regular-card .property-card:hover {
+  border: 1px solid #5847eb;
+  background-color: #5847eb;
+}
+
+.regular-card .property-card .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.regular-card .property-card .row .title {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.regular-card .property-card .row .points {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.regular-card .property-card .row .points:hover .point {
+  background-color: white;
+}
+
+.regular-card .property-card .row .points .point {
+  background-color: #bdc1ff;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  margin: 0.2rem;
+}
+
+.regular-card .property-card .row-2 {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.regular-card .property-card .row-2 .hours {
+  color: white;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.regular-card .property-card .row-2 .description {
+  color: #bdc1ff;
+  font-size: 1.5rem;
+}
+
+.work {
+  background-color: #ff8c66;
+  background-image: url(images/icon-work.svg);
+}
+
+.play {
+  background-color: #56c2e6;
+  background-image: url(images/icon-play.svg);
+}
+
+.study {
+  background-color: #ff5c7c;
+  background-image: url(images/icon-study.svg);
+}
+
+.exercise {
+  background-color: #4acf81;
+  background-image: url(images/icon-exercise.svg);
+}
+
+.social {
+  background-color: #7536d3;
+  background-image: url(images/icon-social.svg);
+}
+
+.self-care {
+  background-color: #f1c65b;
+  background-image: url(images/icon-self-care.svg);
+}
+
+/* =====================================
+   ==========Media Queries==============
+   ===================================== */
+@media screen and (min-width: 1000px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 100vh;
+  }
+  .container {
+    width: 77%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 23% 23% 23% 23%;
+        grid-template-columns: 23% 23% 23% 23%;
+    gap: 3rem;
+  }
+  .menu-card {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1 / span 2;
+    grid-column: unset;
+    height: 100%;
+  }
+  .menu-card .card-report {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    height: 70%;
+    padding: 3.5rem 3rem;
+  }
+  .menu-card .card-report img {
+    width: 8.4rem;
+  }
+  .menu-card .card-report .report {
+    margin-top: 1rem;
+  }
+  .menu-card .card-report .report .name {
+    font-size: 4rem;
+  }
+  .menu-card .menu {
+    height: 30%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .regular-card .property-card {
+    margin-top: 4.5rem;
+    padding: 2.8rem;
+  }
+  .regular-card .property-card .row-2 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .regular-card .property-card .row-2 .hours {
+    font-size: 5.5rem;
+    padding-top: 1.9rem;
+  }
+  .regular-card .property-card .row-2 .description {
+    padding-top: 1rem;
+  }
+}
 /*# sourceMappingURL=main.css.map */

@@ -10,3 +10,249 @@
 html {
   font-size: 62.5%;
 }
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: $bgColor;
+}
+
+.container {
+  width: 88%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+.menu-card {
+  background-color: $dataCardBg;
+  border-radius: 1.6rem;
+  width: 100%;
+}
+
+.card-report {
+  background-color: $profileBg;
+  border-radius: 1.6rem;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.8rem;
+  img {
+    width: 26%;
+    border: 3px solid white;
+    border-radius: 50%;
+  }
+  .report {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.4rem;
+    p {
+      font-size: 1.5rem;
+      color: $previousDataText;
+    }
+    .name {
+      color: white;
+      font-size: 2.4rem;
+      font-weight: 300;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem;
+
+  .menu-link {
+    color: $btnTextColor;
+    font-size: 1.8rem;
+    cursor: pointer;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .menu-active {
+    color: white;
+  }
+}
+
+.regular-card {
+  width: 100%;
+  border-radius: 1.6rem;
+  background-repeat: no-repeat;
+  background-position: 92% -1rem;
+
+  .property-card {
+    position: relative;
+    background-color: $dataCardBg;
+    margin-top: 4rem;
+    border-radius: 1.6rem;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    border: 2px solid $dataCardBg;
+    
+    &:hover {
+      border: 1px solid $profileBg;
+      background-color: $profileBg;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      .title {
+        color: white;
+        font-size: 1.8rem;
+        font-weight: 500;
+      }
+
+      .points {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+          .point {
+            background-color: white;
+          }
+        }
+
+        .point {
+          background-color: $previousDataText;
+          width: 0.4rem;
+          height: 0.4rem;
+          border-radius: 50%;
+          margin: 0.2rem;
+        }
+      }
+    }
+
+    .row-2 {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .hours {
+        color: white;
+        font-size: 3rem;
+        font-weight: 300;
+      }
+
+      .description {
+        color: $previousDataText;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+.work {
+  background-color: $workIconBg;
+  background-image: url(images/icon-work.svg);
+}
+.play {
+  background-color: $playIconBg;
+  background-image: url(images/icon-play.svg);
+}
+.study {
+  background-color: $studyIconBg;
+  background-image: url(images/icon-study.svg);
+}
+.exercise {
+  background-color: $exerciseIconBg;
+  background-image: url(images/icon-exercise.svg);
+}
+.social {
+  background-color: $socialIconBg;
+  background-image: url(images/icon-social.svg);
+}
+.self-care {
+  background-color: $selfCareIconBg;
+  background-image: url(images/icon-self-care.svg);
+}
+
+/* =====================================
+   ==========Media Queries==============
+   ===================================== */
+
+@media screen and (min-width: 1000px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .container {
+    width: 77%;
+    display: grid;
+    grid-template-columns: 23% 23% 23% 23%;
+    gap: 3rem;
+  }
+
+  .menu-card {
+    grid-row: 1 / span 2;
+    grid-column: unset;
+    height: 100%;
+
+    .card-report {
+      flex-direction: column;
+      align-items: flex-start;
+      height: 70%;
+      padding: 3.5rem 3rem;
+
+      img {
+        width: 8.4rem;
+      }
+
+      .report {
+        margin-top: 1rem;
+
+        .name {
+          font-size: 4rem;
+        }
+      }
+    }
+    .menu {
+      height: 30%;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .regular-card {
+    .property-card {
+      margin-top: 4.5rem;
+      padding: 2.8rem;
+
+      .row-2 {
+        flex-direction: column;
+        align-items: flex-start;
+        .hours {
+          font-size: 5.5rem;
+          padding-top: 1.9rem;
+        }
+
+        .description {
+          padding-top: 1rem;
+        }
+      }
+    }
+  }
+}
